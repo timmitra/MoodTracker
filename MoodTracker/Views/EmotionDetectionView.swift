@@ -33,8 +33,33 @@
 import SwiftUI
 
 struct EmotionDetectionView: View {
+  @State private var isShowingImagePicker = false
+  @State private var showSourceTypeActionSheet = false
+  @State private var image: UIImage?
+  @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      VStack(spacing: 20) {
+        
+      }
+      .navigationTitle("Emotion Detection")
+      .sheet(isPresented: $isShowingImagePicker) {
+        ImagePicker(image: self.$image, sourceType: self.$sourceType)
+        
+      }
+      .actionSheet(isPresented: $showSourceTypeActionSheet) {
+        ActionSheet(title: Text("Select Image Source"), message: nil, buttons: [
+          .default(Text("Camera")) {
+            self.sourceType = .camera
+            self.isShowingImagePicker = true
+          },
+          .default(Text("Photo Library")) {
+            self.sourceType = .photoLibrary
+            self.isShowingImagePicker = true
+          },
+          .cancel()
+        ])
+      }
     }
 }
 
