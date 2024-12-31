@@ -40,7 +40,7 @@ struct EmotionDetectionView: View {
 
     var body: some View {
       VStack(spacing: 20) {
-        
+        ImageDisplayView(image: $image, showSourceTypeActionSheet: $showSourceTypeActionSheet)
       }
       .navigationTitle("Emotion Detection")
       .sheet(isPresented: $isShowingImagePicker) {
