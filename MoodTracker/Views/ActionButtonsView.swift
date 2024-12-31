@@ -32,42 +32,28 @@
 
 import SwiftUI
 
-struct EmotionDetectionView: View {
-  @State private var isShowingImagePicker = false
-  @State private var showSourceTypeActionSheet = false
-  @State private var image: UIImage?
-  @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+struct ActionButtonsView: View {
+  @Binding var image: UIImage?
+  var reset: () -> Void
 
     var body: some View {
-      VStack(spacing: 20) {
-        ImageDisplayView(image: $image, showSourceTypeActionSheet: $showSourceTypeActionSheet)
-        ActionButtonsView(image: $image, reset: reset)
-      }
-      .navigationTitle("Emotion Detection")
-      .sheet(isPresented: $isShowingImagePicker) {
-        ImagePicker(image: self.$image, sourceType: self.$sourceType)
-        
-      }
-      .actionSheet(isPresented: $showSourceTypeActionSheet) {
-        ActionSheet(title: Text("Select Image Source"), message: nil, buttons: [
-          .default(Text("Camera")) {
-            self.sourceType = .camera
-            self.isShowingImagePicker = true
-          },
-          .default(Text("Photo Library")) {
-            self.sourceType = .photoLibrary
-            self.isShowingImagePicker = true
-          },
-          .cancel()
-        ])
+      VStack(spacing: 10) {
+        if image != nil {
+          Button(action: reset) {
+            Text("Select Another Image")
+              .font(.headline)
+              .padding()
+              .frame(maxWidth: .infinity)
+              .background(Color.red)
+              .foregroundColor(.white)
+              .cornerRadius(10)
+          }
+          .padding(.horizontal)
+        }
       }
     }
-
-  func reset() {
-    self.image = nil
-  }
 }
 
 #Preview {
-    EmotionDetectionView()
+  ActionButtonsView(image: .constant(nil), reset: {})
 }
