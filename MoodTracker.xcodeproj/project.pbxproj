@@ -12,6 +12,7 @@
 		2A4939242D24807000A09B62 /* ActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4939232D24807000A09B62 /* ActionButtonsView.swift */; };
 		2A4939292D24FA1C00A09B62 /* EmotionsImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2A4939282D24FA1C00A09B62 /* EmotionsImageClassifier.mlmodel */; };
 		2A49392B2D24FA3F00A09B62 /* EmotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A49392A2D24FA3F00A09B62 /* EmotionClassifier.swift */; };
+		2A49392D2D24FB8A00A09B62 /* EmotionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A49392C2D24FB8A00A09B62 /* EmotionResultView.swift */; };
 		6203C2942C445995008CDF16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6203C28B2C445995008CDF16 /* Preview Assets.xcassets */; };
 		6203C2952C445995008CDF16 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203C28D2C445995008CDF16 /* AppMain.swift */; };
 		6203C2962C445995008CDF16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6203C28E2C445995008CDF16 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		2A4939232D24807000A09B62 /* ActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonsView.swift; sourceTree = "<group>"; };
 		2A4939282D24FA1C00A09B62 /* EmotionsImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EmotionsImageClassifier.mlmodel; sourceTree = "<group>"; };
 		2A49392A2D24FA3F00A09B62 /* EmotionClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionClassifier.swift; sourceTree = "<group>"; };
+		2A49392C2D24FB8A00A09B62 /* EmotionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultView.swift; sourceTree = "<group>"; };
 		6203C28B2C445995008CDF16 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6203C28D2C445995008CDF16 /* AppMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		6203C28E2C445995008CDF16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				2A49391F2D247D2600A09B62 /* EmotionDetectionView.swift */,
 				2A4939212D247E6800A09B62 /* ImageDisplayView.swift */,
 				2A4939232D24807000A09B62 /* ActionButtonsView.swift */,
+				2A49392C2D24FB8A00A09B62 /* EmotionResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				2A4939292D24FA1C00A09B62 /* EmotionsImageClassifier.mlmodel in Sources */,
 				6203C2972C445995008CDF16 /* ContentView.swift in Sources */,
 				2A4939222D247E6800A09B62 /* ImageDisplayView.swift in Sources */,
+				2A49392D2D24FB8A00A09B62 /* EmotionResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

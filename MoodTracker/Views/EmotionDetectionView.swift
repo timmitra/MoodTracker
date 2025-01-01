@@ -41,6 +41,9 @@ struct EmotionDetectionView: View {
     var body: some View {
       VStack(spacing: 20) {
         ImageDisplayView(image: $viewModel.image, showSourceTypeActionSheet: $showSourceTypeActionSheet)
+        if let emotion = viewModel.emotion, let accuracy = viewModel.accuracy {
+            EmotionResultView(emotion: emotion, accuracy: accuracy)
+        }
         ActionButtonsView(image: $viewModel.image, reset: viewModel.reset)
       }
       .navigationTitle("Emotion Detection")
