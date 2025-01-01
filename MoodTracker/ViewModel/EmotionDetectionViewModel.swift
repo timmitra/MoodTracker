@@ -38,6 +38,8 @@ class EmotionDetectionViewModel: ObservableObject {
   @Published var emotion: String?
   @Published var accuracy: String?
   
+  private let classifier = EmotionClassifier()
+  
   func classifyImage() {
     if let image = self.image {
       // Resize the image before classification

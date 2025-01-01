@@ -35,6 +35,7 @@ import SwiftUI
 struct ActionButtonsView: View {
   @Binding var image: UIImage?
   var reset: () -> Void
+  var classifyImage: () -> Void
 
     var body: some View {
       VStack(spacing: 10) {
@@ -49,11 +50,25 @@ struct ActionButtonsView: View {
               .cornerRadius(10)
           }
           .padding(.horizontal)
+          
+          Button(action: classifyImage) {
+            Text("Detect Emotion")
+              .font(.headline)
+              .padding()
+              .frame(maxWidth: .infinity)
+              .background(Color.blue)
+              .foregroundColor(.white)
+              .cornerRadius(10)
+          }
+          .padding(.horizontal)
+
         }
       }
     }
 }
 
 #Preview {
-  ActionButtonsView(image: .constant(nil), reset: {})
+  ActionButtonsView(image: .constant(nil),
+                    reset: {},
+                    classifyImage: {})
 }

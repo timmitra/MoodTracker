@@ -44,7 +44,11 @@ struct EmotionDetectionView: View {
         if let emotion = viewModel.emotion, let accuracy = viewModel.accuracy {
             EmotionResultView(emotion: emotion, accuracy: accuracy)
         }
-        ActionButtonsView(image: $viewModel.image, reset: viewModel.reset)
+        ActionButtonsView(
+          image: $viewModel.image,
+          reset: viewModel.reset,
+          classifyImage: viewModel.classifyImage
+        )
       }
       .navigationTitle("Emotion Detection")
       .sheet(isPresented: $isShowingImagePicker) {
