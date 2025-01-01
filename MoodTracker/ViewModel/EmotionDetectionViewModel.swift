@@ -31,39 +31,14 @@
 /// THE SOFTWARE.
 
 import SwiftUI
+import Combine
 
-struct EmotionDetectionView: View {
-  @State private var isShowingImagePicker = false
-  @State private var showSourceTypeActionSheet = false
-  @StateObject private var viewModel = EmotionDetectionViewModel()
-  @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+class EmotionDetectionViewModel: ObservableObject {
+  @Published var image: UIImage?
 
-    var body: some View {
-      VStack(spacing: 20) {
-        ImageDisplayView(image: $viewModel.image, showSourceTypeActionSheet: $showSourceTypeActionSheet)
-        ActionButtonsView(image: $viewModel.image, reset: viewModel.reset)
-      }
-      .navigationTitle("Emotion Detection")
-      .sheet(isPresented: $isShowingImagePicker) {
-        ImagePicker(image: self.$viewModel.image, sourceType: self.$sourceType)
-        
-      }
-      .actionSheet(isPresented: $showSourceTypeActionSheet) {
-        ActionSheet(title: Text("Select Image Source"), message: nil, buttons: [
-          .default(Text("Camera")) {
-            self.sourceType = .camera
-            self.isShowingImagePicker = true
-          },
-          .default(Text("Photo Library")) {
-            self.sourceType = .photoLibrary
-            self.isShowingImagePicker = true
-          },
-          .cancel()
-        ])
-      }
+  func reset() {
+    DispatchQueue.main.async {
+      self.image = nil
     }
-}
-
-#Preview {
-    EmotionDetectionView()
+  }
 }

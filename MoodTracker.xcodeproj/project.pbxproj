@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,10 @@
 		6203C2912C445995008CDF16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62B0ED642C445C4D004F3AF2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2A4939252D24F7F000A09B62 /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		18D775BA22AD944300AE281E /* Frameworks */ = {
@@ -74,6 +78,7 @@
 			children = (
 				6203C28D2C445995008CDF16 /* AppMain.swift */,
 				6203C29C2C4459B5008CDF16 /* Views */,
+				2A4939252D24F7F000A09B62 /* ViewModel */,
 				6203C29B2C4459AE008CDF16 /* Helper */,
 				6203C29A2C4459AA008CDF16 /* Resources */,
 				6203C28C2C445995008CDF16 /* Preview Content */,
@@ -125,6 +130,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2A4939252D24F7F000A09B62 /* ViewModel */,
 			);
 			name = MoodTracker;
 			productName = MyRWTutorial;
